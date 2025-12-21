@@ -1,0 +1,13 @@
+kind: Pod
+apiVersion:
+metadata:
+  name: environment
+spec:
+  containers:
+  - name: nginx
+    image: nginx
+    env:
+      - name: Practice
+        value: Devops
+      - name: duration
+        value: 120hrs
