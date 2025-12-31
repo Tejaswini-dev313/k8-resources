@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: Depolyment
+kind: Deployment
 metadata:
   name: nginx
   labels: # these are replicaset labels
@@ -25,16 +25,16 @@ spec:
       - name: nginx
         image: nginx
 
-# apiVersion: v1
-# kind: Service
-# metadata:
-#   name: nginx
-# spec:
-#   selector:
-#     app: nginx
-#     tier: frontend
-#   ports:
-#   - name: nginx-svc-ports
-#     protocol: TCP
-#     port: 80 # service port
-#     targetPort: 80 # container port 
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx
+spec:
+  selector:
+    app: nginx
+    tier: frontend
+  ports:
+  - name: nginx-svc-ports
+    protocol: TCP
+    port: 80 # service port
+    targetPort: 80 # container port 
