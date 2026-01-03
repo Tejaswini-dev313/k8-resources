@@ -3,7 +3,7 @@ kind: StorageClass
 metadata:
   name: efs-expense
 provisioner: efs.csi.aws.com
-parameter:
+parameters:
   provisioningMode: efs-ap 
   fileSystemId: fs-0c5a01dc6f13376a5
   basePath: "/expense"
